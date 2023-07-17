@@ -1,11 +1,18 @@
 import './App.css'
-import { Box, Typography } from '@mui/material'
+import { RouterProvider } from 'react-router-dom'
+import { router } from './libs/router.tsx'
+import { LocalizationProvider } from '@mui/x-date-pickers'
+import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment'
+import { PropsWithChildren } from 'react'
 
-function App() {
+function App({ children }: PropsWithChildren) {
   return (
-    <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-      <Typography variant="h1" color="primary">Title</Typography>
-    </Box>
+    <>
+      <LocalizationProvider dateAdapter={ AdapterMoment }>
+        <RouterProvider router={ router } />
+        { children }
+      </LocalizationProvider>
+    </>
   )
 }
 
