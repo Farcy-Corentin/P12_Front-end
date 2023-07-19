@@ -17,8 +17,6 @@ export default function AddEmployeeForm() {
   const zipRef = useRef<HTMLInputElement>(null)
   const [department, setDepartment] = useState(departments[0].name)
 
-  console.log({ state, department })
-
   function saveEmployee(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
