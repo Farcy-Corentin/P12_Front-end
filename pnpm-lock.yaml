@@ -11,9 +11,15 @@ dependencies:
   '@emotion/styled':
     specifier: ^11.11.0
     version: 11.11.0(@emotion/react@11.11.1)(@types/react@18.2.15)(react@18.2.0)
+  '@mui/icons-material':
+    specifier: ^5.14.0
+    version: 5.14.0(@mui/material@5.14.0)(@types/react@18.2.15)(react@18.2.0)
   '@mui/material':
     specifier: ^5.14.0
     version: 5.14.0(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.15)(react-dom@18.2.0)(react@18.2.0)
+  '@mui/x-data-grid':
+    specifier: ^6.10.0
+    version: 6.10.0(@mui/material@5.14.0)(@mui/system@5.14.0)(react-dom@18.2.0)(react@18.2.0)
   '@mui/x-date-pickers':
     specifier: ^6.10.0
     version: 6.10.0(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@mui/base@5.0.0-beta.7)(@mui/material@5.14.0)(@mui/system@5.14.0)(moment@2.29.4)(react-dom@18.2.0)(react@18.2.0)
@@ -738,6 +744,23 @@ packages:
     resolution: {integrity: sha512-SYBOVCatVDUf/lbrLGah09bHhX5WfUXg7kSskfLILr6SvKRni0NLp0aonxQ0SMALVVK3Qwa6cW4CdWuwS0gC1w==}
     dev: false
 
+  /@mui/icons-material@5.14.0(@mui/material@5.14.0)(@types/react@18.2.15)(react@18.2.0):
+    resolution: {integrity: sha512-z7lYNteDi1GMkF9JP/m2RWuCYK1M/FlaeBSUK7/IhIYzIXNhAVjfD8jRq5vFBV31qkEi2aGBS2z5SfLXwH6U0A==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      '@mui/material': ^5.0.0
+      '@types/react': ^17.0.0 || ^18.0.0
+      react: ^17.0.0 || ^18.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.22.6
+      '@mui/material': 5.14.0(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.15)(react-dom@18.2.0)(react@18.2.0)
+      '@types/react': 18.2.15
+      react: 18.2.0
+    dev: false
+
   /@mui/material@5.14.0(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.15)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-HP7CP71NhMkui2HUIEKl2/JfuHMuoarSUWAKlNw6s17bl/Num9rN61EM6uUzc2A2zHjj/00A66GnvDnmixEJEw==}
     engines: {node: '>=12.0.0'}
@@ -866,6 +889,26 @@ packages:
       prop-types: 15.8.1
       react: 18.2.0
       react-is: 18.2.0
+    dev: false
+
+  /@mui/x-data-grid@6.10.0(@mui/material@5.14.0)(@mui/system@5.14.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-x9h+Z4B2vu+ZKKwClBVs30Y9eZYdhqyV3toHH2E0zat7FIZxwiVfk6qz4Q98V1fV0Fe1nczPj9i0siUmduMEXg==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      '@mui/material': ^5.4.1
+      '@mui/system': ^5.4.1
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
+    dependencies:
+      '@babel/runtime': 7.22.6
+      '@mui/material': 5.14.0(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.15)(react-dom@18.2.0)(react@18.2.0)
+      '@mui/system': 5.14.0(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.15)(react@18.2.0)
+      '@mui/utils': 5.13.7(react@18.2.0)
+      clsx: 1.2.1
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      reselect: 4.1.8
     dev: false
 
   /@mui/x-date-pickers@6.10.0(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@mui/base@5.0.0-beta.7)(@mui/material@5.14.0)(@mui/system@5.14.0)(moment@2.29.4)(react-dom@18.2.0)(react@18.2.0):
@@ -2084,6 +2127,10 @@ packages:
 
   /remove-accents@0.4.2:
     resolution: {integrity: sha512-7pXIJqJOq5tFgG1A2Zxti3Ht8jJF337m4sowbuHsW30ZnkQFnDzy9qBNhgzX8ZLW4+UBcXiiR7SwR6pokHsxiA==}
+    dev: false
+
+  /reselect@4.1.8:
+    resolution: {integrity: sha512-ab9EmR80F/zQTMNeneUr4cv+jSwPJgIlvEmVwLerwrWVbpLlBuls9XHzIeTFy4cegU2NHBp3va0LKOzU5qFEYQ==}
     dev: false
 
   /resolve-from@4.0.0:
