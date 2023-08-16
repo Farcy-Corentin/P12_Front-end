@@ -21,3 +21,8 @@ label {
 .address {
   margin-top: 10px;
 }
+
+.link:hover {
+  color: rgba(24,24,24,0.75);
+  text-decoration: underline;
+}
