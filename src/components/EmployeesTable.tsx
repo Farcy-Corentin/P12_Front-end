@@ -1,5 +1,7 @@
 import { DataGrid, GridColDef } from '@mui/x-data-grid'
 import Employee from '../Interface/EmployeeInterface.ts'
+import { useSelector } from 'react-redux'
+import { RootState } from '../store/store.ts'
 
 export default function EmployeesTable() {
   const columns: GridColDef[] = [
@@ -58,7 +60,7 @@ export default function EmployeesTable() {
     },
   ]
 
-  const employees: Employee[] = JSON.parse(localStorage.getItem('employees') as string) || []
+  const employees: Employee[] = useSelector((state: RootState) => state.createEmployee)
 
   return (
     <div style={{ height: '100%', width: '100%' }}>
