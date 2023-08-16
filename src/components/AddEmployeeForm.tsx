@@ -1,12 +1,14 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, Dispatch, SetStateAction } from 'react'
 import { Button, FormLabel, MenuItem, Select, SelectChangeEvent, TextField } from '@mui/material'
 import { DatePicker } from '@mui/x-date-pickers'
 import { Form } from 'react-router-dom'
 import Employee from '../Interface/EmployeeInterface.ts'
 import { states } from '../data/states.ts'
 import { departments } from '../data/departments.ts'
+import { useDispatch } from 'react-redux'
+import { create } from '../features/employee/createEmployeeSlice.ts'
 
-export default function AddEmployeeForm() {
+export default function AddEmployeeForm({ setIsOpen }: { setIsOpen:  Dispatch<SetStateAction<boolean>>}) {
   const firstNameRef = useRef<HTMLInputElement>(null)
   const lastNameRef = useRef<HTMLInputElement>(null)
   const dateOfBirthRef = useRef<HTMLInputElement>(null)
@@ -16,6 +18,7 @@ export default function AddEmployeeForm() {
   const [state, setState] = useState(states[0].abbreviation)
   const zipRef = useRef<HTMLInputElement>(null)
   const [department, setDepartment] = useState(departments[0].name)
+  const dispatch = useDispatch()
 
   function saveEmployee(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -32,10 +35,7 @@ export default function AddEmployeeForm() {
       department: department ?? '',
     }
 
-    const employees: Employee[] = JSON.parse(localStorage.getItem('employees') as string) || []
-    employees.push(employee)
-
-    localStorage.setItem('employees', JSON.stringify(employees))
+    dispatch(create(employee))
 
     const inputs = [
       firstNameRef,
@@ -48,6 +48,7 @@ export default function AddEmployeeForm() {
     ]
 
     reset({ inputs: inputs })
+    setIsOpen(true)
   }
 
   function reset({ inputs }: { inputs: React.RefObject<HTMLInputElement>[] | React.RefObject<HTMLSelectElement>[] }) {
