@@ -1,6 +1,7 @@
-import { Box, Container, Typography, Link } from '@mui/material'
+import { Box, Container, Typography } from '@mui/material'
 import AddEmployeeForm from '../components/AddEmployeeForm.tsx'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 // @ts-ignore
 import { Modal, ModalCloseButton, ModalHeader, ModalContent } from 'p12-modal'
 import 'p12-modal/style.css'
@@ -34,7 +35,7 @@ export default function Home(): JSX.Element {
           flexDirection: 'column',
           width: '100%',
         }}>
-          <Link href="/employees" underline="hover" color="grey">View Current Employees</Link>
+          <Link to="/employees" className="link">View Current Employees</Link>
           <Typography variant="h5"
                       component="h2"
                       sx={{ margin: '22px 0' }}>Create Employee</Typography>
