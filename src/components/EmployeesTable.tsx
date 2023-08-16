@@ -2,6 +2,7 @@ import { DataGrid, GridColDef } from '@mui/x-data-grid'
 import Employee from '../Interface/EmployeeInterface.ts'
 import { useSelector } from 'react-redux'
 import { RootState } from '../store/store.ts'
+import { Box } from '@mui/material'
 
 export default function EmployeesTable() {
   const columns: GridColDef[] = [
@@ -63,7 +64,11 @@ export default function EmployeesTable() {
   const employees: Employee[] = useSelector((state: RootState) => state.createEmployee)
 
   return (
-    <div style={{ height: '100%', width: '100%' }}>
+    <Box sx={{
+      height: '50vh',
+      width: '100%',
+      marginBottom: '24px'
+    }}>
       <DataGrid
         rows={employees}
         columns={columns}
@@ -76,6 +81,6 @@ export default function EmployeesTable() {
         disableColumnMenu={true}
         getRowId={() => Math.random().toString(36)}
       />
-    </div>
+    </Box>
   )
 }

@@ -1,5 +1,5 @@
 import { useRef, useState, Dispatch, SetStateAction } from 'react'
-import { Button, FormLabel, MenuItem, Select, SelectChangeEvent, TextField } from '@mui/material'
+import { Button, FormLabel, MenuItem, Select, SelectChangeEvent, TextField, Typography } from '@mui/material'
 import { DatePicker } from '@mui/x-date-pickers'
 import { Form } from 'react-router-dom'
 import Employee from '../Interface/EmployeeInterface.ts'
@@ -66,57 +66,76 @@ export default function AddEmployeeForm({ setIsOpen }: { setIsOpen:  Dispatch<Se
   }
 
   return (
-    <Form action="#"
-          id="create-employee"
-          onSubmit={ saveEmployee }>
+    <Form
+      action="#"
+      id="create-employee"
+      onSubmit={ saveEmployee }
+    >
       <FormLabel htmlFor="first-name">First Name</FormLabel>
-      <TextField type="text"
-                 id="first-name"
-                 ref={ firstNameRef }
-                 fullWidth={ true } />
+      <TextField
+        type="text"
+        id="first-name"
+        ref={ firstNameRef }
+        fullWidth={ true }
+      />
       <FormLabel htmlFor="last-name">Last Name</FormLabel>
-      <TextField type="text"
-                 id="last-name"
-                 ref={ lastNameRef }
-                 fullWidth={ true } />
+      <TextField
+        type="text"
+        id="last-name"
+        ref={ lastNameRef }
+        fullWidth={ true }
+      />
       <FormLabel htmlFor="date-of-birth">Date of Birth</FormLabel>
       <DatePicker ref={ dateOfBirthRef } />
       <FormLabel htmlFor="start-date">Start Date</FormLabel>
       <DatePicker ref={ startedAtRef } />
-      <fieldset className="address">
-        <legend>Address</legend>
-        <FormLabel htmlFor="street">Street</FormLabel>
-        <TextField id="street"
-                   type="text"
-                   ref={ streetRef } />
-        <FormLabel htmlFor="city">City</FormLabel>
-        <TextField id="city"
-                   type="text"
-                   ref={ cityRef } />
-        <FormLabel htmlFor="state">State</FormLabel>
-        <Select name="state"
-                id="state"
-                value={ state }
-                onChange={ (event: SelectChangeEvent<string>) => setState(event.target.value) }
-                fullWidth={ true }>
-          { states.map(state => (
-            <MenuItem key={ state.abbreviation }
-                      value={ state.abbreviation }>
-              { state.name }
-            </MenuItem>
-          )) }
-        </Select>
-        <FormLabel htmlFor="zip-code">Zip Code</FormLabel>
-        <TextField id="zip-code"
-                   type="text"
-                   ref={ zipRef } />
-      </fieldset>
+      <Typography variant="h5" component="h3" sx={{
+        marginTop: "20px"
+      }}>Address:</Typography>
+      <FormLabel htmlFor="street">Street</FormLabel>
+      <TextField
+        id="street"
+        type="text"
+        ref={ streetRef }
+        fullWidth={ true }
+      />
+      <FormLabel htmlFor="city">City</FormLabel>
+      <TextField
+        id="city"
+        type="text"
+        ref={ cityRef }
+        fullWidth={ true }
+      />
+      <FormLabel htmlFor="state">State</FormLabel>
+      <Select
+        name="state"
+        id="state"
+        value={ state }
+        onChange={ (event: SelectChangeEvent<string>) => setState(event.target.value) }
+        fullWidth={ true }
+      >
+        { states.map(state => (
+          <MenuItem key={ state.abbreviation }
+                    value={ state.abbreviation }>
+            { state.name }
+          </MenuItem>
+        )) }
+      </Select>
+      <FormLabel htmlFor="zip-code">Zip Code</FormLabel>
+      <TextField
+        id="zip-code"
+        type="text"
+        ref={ zipRef }
+        fullWidth={ true }
+      />
       <FormLabel htmlFor="department">Department</FormLabel>
-      <Select name="department"
-              id="department"
-              value={ department }
-              onChange={ (event: SelectChangeEvent<string>) => setDepartment(event.target.value) }
-              fullWidth={ true }>
+      <Select
+        name="department"
+        id="department"
+        value={ department }
+        onChange={ (event: SelectChangeEvent<string>) => setDepartment(event.target.value) }
+        fullWidth={ true }
+      >
         { departments.map(department => (
           <MenuItem key={ department.name }
                     value={ department.name }>
@@ -125,11 +144,12 @@ export default function AddEmployeeForm({ setIsOpen }: { setIsOpen:  Dispatch<Se
         )) }
       </Select>
       <div>
-        <Button type="submit"
-                variant="contained"
-                color="primary"
-                sx={ { margin: '16px 0' } }
-                aria-label="Save Employee">
+        <Button
+          type="submit"
+          variant="contained"
+          color="primary"
+          sx={ { margin: '16px 0' } }
+          aria-label="Save Employee">
           Save
         </Button>
       </div>

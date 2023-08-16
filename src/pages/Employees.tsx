@@ -6,9 +6,9 @@ import {
   Input,
   InputAdornment,
   Typography,
+  Link,
 } from '@mui/material'
 import { Search } from '@mui/icons-material'
-import { Link } from 'react-router-dom'
 
 
 export function Employees() {
@@ -36,7 +36,7 @@ export function Employees() {
         </FormControl>
       </Box>
       <EmployeesTable/>
-      <Link to={'/'}>Home</Link>
+      <Link href={'/'} underline="hover" color="grey">Home</Link>
     </Container>
   )
 }

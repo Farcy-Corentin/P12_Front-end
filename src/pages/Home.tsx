@@ -1,5 +1,4 @@
-import { Box, Container, Typography } from '@mui/material'
-import { Link } from 'react-router-dom'
+import { Box, Container, Typography, Link } from '@mui/material'
 import AddEmployeeForm from '../components/AddEmployeeForm.tsx'
 import { useState } from 'react'
 // @ts-ignore
@@ -35,7 +34,7 @@ export default function Home(): JSX.Element {
           flexDirection: 'column',
           width: '100%',
         }}>
-          <Link to="/employees">View Current Employees</Link>
+          <Link href="/employees" underline="hover" color="grey">View Current Employees</Link>
           <Typography variant="h5"
                       component="h2"
                       sx={{ margin: '22px 0' }}>Create Employee</Typography>
